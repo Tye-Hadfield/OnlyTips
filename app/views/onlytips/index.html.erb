@@ -10,7 +10,12 @@
    
 </head>
     <body class="text-center">
+     
         <div class="container">
+            <div class="row">
+                <p class="notice color1"><%= notice %></p>
+                <p class="alert color1"><%= alert %></p>
+          </div>
             <div class="row justify-content-center ">
                 <div class="img-fluid">
                     <%= image_tag("logo.png", :alt => "A picture of a logo", class: "img-fluid", ) %>
@@ -30,8 +35,8 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="cover-container w-100 h-100 p-4 mx-auto justify-content-center">
-                                        <button type="button " class="btn color1btn">Login</button>
-                                        <button type="button " class="btn color1btn">Register</button>
+                                        <%= link_to "Register", new_user_registration_path, class: "btn color1btn" %>
+                                        <%= link_to "Login", new_user_session_path, class: "btn color1btn" %>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +86,7 @@
 
    <div class="container justify-content-center">
 
-    <div class="row justify-content-center margintopfooter">
+    <div class="row justify-content-center ">
         <ul class="list-unstyled list-inline text-center">
             <li class="list-inline-item">
               <a class="btn-floating btn-fb mx-1">
