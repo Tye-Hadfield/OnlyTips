@@ -1,0 +1,49 @@
+
+<body class="backgroundcolor">
+
+<div class="container-fluid">
+    <div class="row backgroundcolornav justify-content-center">
+       
+        <div class="col algin-text-center justify-content-center align-items-center align-self-center align-content-center">
+                <%= image_tag("logo.png", :alt => "A picture of a logo", class: "img-fluid justify-content-center ", width: "100", height: "50") %>
+        </div>
+        <div class="col color1 algin-text-center justify-content-center align-items-center align-self-center align-content-center ">
+        </div>
+        <div class="col align-self-center  ">
+            <%= link_to "Sign-Out", destroy_user_session_path, method: :delete, class: "btn color1btn float-right" %>
+        </div>
+</div>
+
+<div class="container-fluid float-left justify-content-center">
+    <div class="row justify-content-center">
+            <div class="float-left margintoplil">
+                <button class="color1btn btnfont" onclick="window.location.href='http://localhost:3000/profile';">
+                  Home
+                 </button>
+                <button class="color1btn btnfont " onclick="window.location.href='http://localhost:3000/profile';">
+                  Profile
+                 </button>
+                <button class="color1btn btnfont " onclick="window.location.href='http://localhost:3000/profile';">
+                  Tippers
+                 </button>
+                <button class="color1btn btnfont" onclick="window.location.href='http://localhost:3000/profile';">
+                  Your Tippers
+                 </button>
+                 <button class="color1btn btnfont" onclick="window.location.href='http://localhost:3000/admin';">
+                    Admin Menu
+                </button>
+            </div>
+    </div>
+    <div class="row">
+       <h1 class="profilemargin"><%= current_user.roles[0].name %></h1> 
+    </div>
+    <div class="row">
+        <div class="col">
+            <%= image_tag("kitty.jpg", :alt => "A picture of a logo", class: "img-fluid rounded-circle float-left", size: "100x100" ) %>
+        </div>
+        
+</div>
+
+
+
+</body>

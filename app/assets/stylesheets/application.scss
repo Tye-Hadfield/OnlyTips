@@ -1,16 +1,16 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- */
+// /*
+//  * This is a manifest file that'll be compiled into application.css, which will include all the files
+//  * listed below.
+//  *
+//  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+//  * vendor/assets/stylesheets directory can be referenced here using a relative path.
+//  *
+//  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+//  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+//  * files in this directory. Styles in this file should be added after the last require_* statement.
+//  * It is generally better to create a new file per style scope.
+//  *
+//  */
  
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
@@ -31,6 +31,13 @@
     color: #0f222d !important;
 }
 
+.backgroundcolor {
+  background-color: #0f222d;
+}
+.backgroundcolornav {
+  background-color: #687075;
+}
+
 .heading-bold {
         font-size: 200%;
 }
@@ -48,10 +55,45 @@
     margin-top: 2%;
 }
 
+.btnfont {
+  font-size: 12px;
+  padding: 18px 16px;
+}
+
 
 .margintopfooter {
     margin-top: 5%;
 }
+
+.marginzero {
+  margin: 0%;
+}
+
+.profilemargin {
+  margin-left: 3%;
+}
+
+.menubuttons {
+  .btn-group button {
+    background-color: #4CAF50; /* Green background */
+    border: 1px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    width: 50%; /* Set a width if needed */
+    display: block; /* Make the buttons appear below each other */
+  }
+  
+  .btn-group button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+  }
+  
+  /* Add a background color on hover */
+  .btn-group button:hover {
+    background-color: #3e8e41;
+  }
+}
+
 
 
 /* Links */
@@ -150,6 +192,9 @@ body {
   padding: .75rem 1.25rem;
   font-weight: 700;
 }
+
+
+
 
 
 /*

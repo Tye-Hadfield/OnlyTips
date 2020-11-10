@@ -61,3 +61,5 @@ gem "jquery-rails", "~> 4.4"
 gem "font-awesome-sass", "~> 5.15"
 
 gem "devise", "~> 4.7"
+
+gem "rolify", "~> 5.3"
