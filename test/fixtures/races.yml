@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  race_date: 2020-11-11
+  race_course: one
+  race_number: 1
+  horse: one
+  race_length: 1
+  prize_money: 1.5
+
+two:
+  race_date: 2020-11-11
+  race_course: two
+  race_number: 1
+  horse: two
+  race_length: 1
+  prize_money: 1.5

@@ -10,10 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_09_080809) do
+ActiveRecord::Schema.define(version: 2020_11_11_034729) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "horses", force: :cascade do |t|
+    t.string "horse_name"
+    t.integer "horse_number"
+    t.string "jockey"
+    t.string "trainer"
+    t.integer "current_win"
+    t.integer "current_places"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "horses_races", id: false, force: :cascade do |t|
+    t.bigint "horse_id", null: false
+    t.bigint "race_id", null: false
+    t.index ["horse_id", "race_id"], name: "index_horses_races_on_horse_id_and_race_id"
+    t.index ["race_id", "horse_id"], name: "index_horses_races_on_race_id_and_horse_id"
+  end
+
+  create_table "race_courses", force: :cascade do |t|
+    t.string "race_course_name"
+    t.string "address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "races", force: :cascade do |t|
+    t.date "race_date"
+    t.bigint "race_course_id", null: false
+    t.integer "race_number"
+    t.integer "race_length"
+    t.float "prize_money"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["race_course_id"], name: "index_races_on_race_course_id"
+  end
 
   create_table "roles", force: :cascade do |t|
     t.string "name"
@@ -45,4 +81,5 @@ ActiveRecord::Schema.define(version: 2020_11_09_080809) do
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
+  add_foreign_key "races", "race_courses"
 end

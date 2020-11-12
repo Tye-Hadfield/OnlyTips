@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<%= render "partials/navbar" %>
+
+<h1>Horses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Horse name</th>
+      <th>Horse number</th>
+      <th>Jockey</th>
+      <th>Trainer</th>
+      <th>Current win</th>
+      <th>Current places</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody class="container text-center">
+    <% @horses.each do |horse| %>
+        <td class="col" style="width: 100px;"><%= horse.horse_name %></td>
+        <td class="col" style="width: 100px;"><%= horse.horse_number %></td>
+        <td class="col" style="width: 100px;"><%= horse.jockey %></td>
+        <td class="col" style="width: 100px;"><%= horse.trainer %></td>
+        <td class="col" style="width: 100px;"><%= horse.current_win %></td>
+        <td class="col" style="width: 100px;"><%= horse.current_places %></td>
+        <td class="col" style="width: 100px;"><%= link_to 'Show', horse %></td>
+        <td class="col" style="width: 100px;"><%= link_to 'Edit', edit_horse_path(horse) %></td>
+        <td class="col" style="width: 100px;"><%= link_to 'Destroy', horse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Horse', new_horse_path %>

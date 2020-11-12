@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  horse_name: MyString
+  horse_number: 1
+  jockey: MyString
+  trainer: MyString
+  current_win: 1
+  current_places: 1
+
+two:
+  horse_name: MyString
+  horse_number: 1
+  jockey: MyString
+  trainer: MyString
+  current_win: 1
+  current_places: 1

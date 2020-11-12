@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  resources :races
+  resources :race_courses
+  resources :horses
   devise_for :users
+  
 
   # Profile
 

@@ -1,0 +1,47 @@
+<%= form_with(model: race, local: true) do |form| %>
+  <% if race.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(race.errors.count, "error") %> prohibited this race from being saved:</h2>
+
+      <ul>
+        <% race.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :race_date %>
+    <%= form.date_select :race_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :race_course_id %>
+    <%= form.collection_select :race_course_id, @race_courses, :id, :race_course_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :race_number %>
+    <%= form.number_field :race_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :horse_ids %>
+    <%= form.collection_check_boxes :horse_ids, @horses, :id, :horse_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :race_length %>
+    <%= form.number_field :race_length %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prize_money %>
+    <%= form.text_field :prize_money %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

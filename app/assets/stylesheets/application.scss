@@ -73,27 +73,30 @@
   margin-left: 3%;
 }
 
-.menubuttons {
-  .btn-group button {
-    background-color: #4CAF50; /* Green background */
-    border: 1px solid green; /* Green border */
-    color: white; /* White text */
-    padding: 10px 24px; /* Some padding */
-    cursor: pointer; /* Pointer/hand icon */
-    width: 50%; /* Set a width if needed */
-    display: block; /* Make the buttons appear below each other */
-  }
-  
-  .btn-group button:not(:last-child) {
-    border-bottom: none; /* Prevent double borders */
-  }
-  
-  /* Add a background color on hover */
-  .btn-group button:hover {
-    background-color: #3e8e41;
-  }
+input[type=text] {
+  background-color: #fff5d0;
+  color: black;
 }
-
+input[type=number] {
+  background-color: #fff5d0;
+  color: black;
+}
+input[type=submit] {
+  background-color: #fff5d0;
+  color: black;
+}
+#race_race_date_1i{
+  background-color: #fff5d0;
+  color: black;
+}
+#race_race_date_2i{
+  background-color: #fff5d0;
+  color: black;
+}
+#race_race_date_3i{
+  background-color: #fff5d0;
+  color: black;
+}
 
 
 /* Links */
@@ -129,9 +132,6 @@ body {
 //   background-size: cover;
 }
 
-.text-center {
-    background-color: #0f222d;
-}
 
 .cover-container {
   max-width: 42em;
