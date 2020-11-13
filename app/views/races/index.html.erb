@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<%= render "partials/navbar" %>
+
+
+
 <h1>Races</h1>
 
 <table>
@@ -15,19 +19,17 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="container text-center">
     <% @races.each do |race| %>
-      <tr>
-        <td><%= race.race_date %></td>
-        <td><%= race.race_course_id %></td>
-        <td><%= race.race_number %></td>
-        <td><%# race.horse_id %></td>
-        <td><%= race.race_length %></td>
-        <td><%= race.prize_money %></td>
-        <td><%= link_to 'Show', race %></td>
-        <td><%= link_to 'Edit', edit_race_path(race) %></td>
-        <td><%= link_to 'Destroy', race, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <td class="col" style="width: 100px;"><%= race.race_date %></td>
+        <td class="col" style="width: 100px;"><%= race.race_course_id %></td>
+        <td class="col" style="width: 100px;"><%= race.race_number %></td>
+        <td class="col" style="width: 100px;"><%# race.horse_id %></td>
+        <td class="col" style="width: 100px;"><%= race.race_length %></td>
+        <td class="col" style="width: 100px;"><%= race.prize_money %></td>
+        <td class="col" style="width: 100px;"><%= link_to 'Show', race %></td>
+        <td class="col" style="width: 100px;"><%= link_to 'Edit', edit_race_path(race) %></td>
+        <td class="col" style="width: 100px;"><%= link_to 'Destroy', race, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end %>
   </tbody>
 </table>

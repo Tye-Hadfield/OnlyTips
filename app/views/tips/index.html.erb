@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+
+<%= render "partials/nonadminnavbar" %>
+
+
+<h1>Tips</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Race course</th>
+      <th>Race Number</th>
+      <th>Horse</th>
+      <th>Result</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+
+  <tbody class="container text-center justify-contents-center">
+
+    <% if @user.has_role? :admin  %>
+    
+    <% @tips.each do |tip| %>
+
+  <tr > 
+    <td class="col" style="width: 100px;"><%= tip.user.email %></td>
+    <td class="col" style="width: 100px;"><%= tip.race_course.race_course_name %></td>
+    <td class="col" style="width: 100px;"><%= tip.race_id %></td>
+    <td class="col" style="width: 100px;"><%= tip.horse.horse_name %></td>
+    <td class="col" style="width: 100px;"><%= tip.result %></td>
+    <td class="col" style="width: 100px;"><%= link_to 'Show', tip %></td>
+    <td class="col" style="width: 100px;"><%= link_to 'Edit', edit_tip_path(tip) %></td>
+    <td class="col" style="width: 100px;"><%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+
+  <% end %>
+
+  <% else %>
+
+  
+
+  <% @user.tips.each do |tip| %>
+  <tr > 
+    <td class="col" style="width: 100px;"><%= tip.user.email %></td>
+    <td class="col" style="width: 100px;"><%= tip.race_course.race_course_name %></td>
+    <td class="col" style="width: 100px;"><%= tip.race_id %></td>
+    <td class="col" style="width: 100px;"><%= tip.horse.horse_name %></td>
+    <td class="col" style="width: 100px;"><%= tip.result %></td>
+    <td class="col" style="width: 100px;"><%= link_to 'Show', tip %></td>
+    <td class="col" style="width: 100px;"><%= link_to 'Edit', edit_tip_path(tip) %></td>
+    <td class="col" style="width: 100px;"><%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+
+    <% end %>
+
+    <% end %>
+
+
+
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tip', new_tip_path %>

@@ -1,17 +1,19 @@
 class ProfileController < ApplicationController
+# load_and_authorize_resource
 before_action :authenticate_user! 
-# before_action :check_roles 
+before_action :set_user
+
+def home
+end
 
 
 
-# private
 
-# def check_roles
-#    if !current_user.has_role? (:admin)
-#     flash[:alert] = "You are not authorized to access that page"
-#     redirect_to root_path
-#    end
-# end
+private
+
+def set_user
+    @user = current_user 
+end
 
 
 end

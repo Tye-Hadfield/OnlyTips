@@ -1,0 +1,47 @@
+<%= form_with(model: tip, local: true) do |form| %>
+  <% if tip.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tip.errors.count, "error") %> prohibited this tip from being saved:</h2>
+
+      <ul>
+        <% tip.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id%> :
+    <%= p @user.email %>
+    <%= form.hidden_field :user_id, value: @user.id, :readonly => true %>
+  </div>
+
+ 
+  <div class="field">
+    <%= form.label :race_course_id %>
+    <%= form.collection_select :race_course_id, RaceCourse.all, :id, :race_course_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :race_id %>
+    <%= form.collection_select :race_id, Race.all, :id, :race_number %>
+  </div>
+
+
+
+  <div class="field">
+    <%= form.label :horse_id %>
+    <%= form.collection_select :horse_id, Horse.all, :id, :horse_name %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :result %>
+    <%= form.text_field :result %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

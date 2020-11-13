@@ -85,6 +85,15 @@ input[type=submit] {
   background-color: #fff5d0;
   color: black;
 }
+
+input[type=email] {
+  background-color: #fff5d0;
+  color: black;
+}
+input[type=password] {
+  background-color: #fff5d0;
+  color: black;
+}
 #race_race_date_1i{
   background-color: #fff5d0;
   color: black;
@@ -97,8 +106,24 @@ input[type=submit] {
   background-color: #fff5d0;
   color: black;
 }
+#race_race_course_id {
+  background-color: #fff5d0;
+  color: black;
+}
+
+select {
+  background-color: #fff5d0;
+  color: black;
+}
 
 
+h2 {
+  color: #fff5d0
+}
+
+.field {
+  color: #fff5d0;
+}
 /* Links */
 a,
 a:focus,

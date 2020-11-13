@@ -1,4 +1,5 @@
 class HorsesController < ApplicationController
+  load_and_authorize_resource
   before_action :set_horse, only: [:show, :edit, :update, :destroy, :horses_view ]
   before_action :set_horses, only: [:set_horses]
 

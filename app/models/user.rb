@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+   has_many :tips
+
   rolify
   after_create :assign_default_role
   # Include default devise modules. Others available are:
@@ -6,7 +8,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          
-         def assign_default_role
-            self.add_role(:user)
-         end
+   def assign_default_role
+      self.add_role(:user)
+   end
+
+   def admin?
+      has_role?(:admin)
+    end
+
 end

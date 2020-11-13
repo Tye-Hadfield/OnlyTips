@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tips
   resources :races
   resources :race_courses
   resources :horses
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
 
   get 'onlytips/index', to: "onlytips#index"
   get '/profile', to: "profile#profile"
+  get '/home', to: "profile#home"
   get '/test', to: "profile#test"
   
 
@@ -20,6 +22,9 @@ Rails.application.routes.draw do
   
   # Devise Where to send after user login/created
   get '/user' => "profile#profile", :as => :user_root
+
+
+get '/tips', to: "tips#index"
   
   
   

@@ -1,4 +1,5 @@
 class RacesController < ApplicationController
+  load_and_authorize_resource
   before_action :set_race, only: [:show, :edit, :update, :destroy]
   before_action :set_horses
   before_action :set_race_courses

@@ -63,3 +63,5 @@ gem "font-awesome-sass", "~> 5.15"
 gem "devise", "~> 4.7"
 
 gem "rolify", "~> 5.3"
+
+gem "cancancan", "~> 3.1"

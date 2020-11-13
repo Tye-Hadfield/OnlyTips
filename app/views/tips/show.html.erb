@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Race:</strong>
+  <%= @tip.race_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @tip.user_id %>
+</p>
+
+<p>
+  <strong>Race course:</strong>
+  <%= @tip.race_course_id %>
+</p>
+
+<p>
+  <strong>Horse:</strong>
+  <%= @tip.horse_id %>
+</p>
+
+<p>
+  <strong>Result:</strong>
+  <%= @tip.result %>
+</p>
+
+<%= link_to 'Edit', edit_tip_path(@tip) %> |
+<%= link_to 'Back', tips_path %>
