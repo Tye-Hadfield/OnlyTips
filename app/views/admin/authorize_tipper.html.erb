@@ -1,0 +1,17 @@
+
+<%= form_for :users do |form| %>
+
+<div class="field">
+    <%= form.label :id, "Username" %>
+    <%= form.collection_select :id, @allusers, :id, :username %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :roles %>
+    <%= form.collection_check_boxes :roles, @allusers, :roles, :roles_name %>
+  </div>
+  
+
+
+<% end %>

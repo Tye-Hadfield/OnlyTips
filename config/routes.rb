@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get '/admin/horse', to: "admin#horse"
   get '/admin/race_course', to: "admin#race_course"
   get '/admin/race', to: "admin#race"
-  
+  get 'admin/authorize_tipper', to: "admin#authorize_tipper"
   # Devise Where to send after user login/created
   get '/user' => "profile#profile", :as => :user_root
 
