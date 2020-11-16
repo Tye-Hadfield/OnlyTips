@@ -6,6 +6,8 @@ before_action :set_user
 def dashboard
 end
 
+
+
 private
 
 def set_user

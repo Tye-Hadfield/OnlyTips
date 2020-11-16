@@ -1,6 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+
+<% if @horse.image.attached? %>
+
+    <p>Horse Picture</p>
+    <%= image_tag @horse.image, width: 200 %>
+
+<% end %>
+
   <strong>Horse name:</strong>
   <%= @horse.horse_name %>
 </p>

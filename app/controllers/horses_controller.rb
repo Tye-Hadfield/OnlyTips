@@ -83,7 +83,7 @@ class HorsesController < ApplicationController
     end
 
     def horse_params
-      params.require(:horse).permit(:horse_name, :horse_number, :jockey, :trainer, :current_win, :current_places, :horse_name)
+      params.require(:horse).permit(:horse_name, :horse_number, :jockey, :trainer, :current_win, :current_places, :horse_name, :image)
     end
 end
     # Only allow a list of trusted parameters through.

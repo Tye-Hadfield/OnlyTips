@@ -18,6 +18,14 @@ Rails.application.routes.draw do
   get '/admin/authorize/', to: "admin#authorize_tipper"
   patch '/admin/authorize/:id/edit', to: "admin#update"
 
+# Tippers 
+
+get '/tippers', to: "tippers#index"
+get '/tippers/:id/show', to: "tippers#show", as: "show_tipper"
+
+
+
+
   # dashboard
 
   get 'onlytips/index', to: "onlytips#index"

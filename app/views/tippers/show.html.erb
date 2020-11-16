@@ -1,0 +1,29 @@
+<%= render "partials/navbar" %>
+
+<h1> <%= @user.username %> Tips</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Race Course</th>
+      <th>Race Number</th>
+      <th>Horse</th>
+      <th>Expected Result</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody class="container text-center">
+    <% @user.tips.each do |user| %>
+        <td class="col" style="width: 100px;"><%= user.race_course.race_course_name %></td>
+        <td class="col" style="width: 100px;"><%= user.race.race_number %></td>
+        <td class="col" style="width: 100px;"><%= user.horse.horse_name %></td>
+        <td class="col" style="width: 100px;"><%= user.result %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Back to Tippers', tippers_path %>
