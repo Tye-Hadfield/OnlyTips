@@ -28,7 +28,7 @@
                                         <%= link_to "Register", new_user_registration_path, class: "btn color1btn" %>
                                         <%= link_to "Login", new_user_session_path, class: "btn color1btn" %>
                                         <% if user_signed_in? %>
-                                          <%= link_to "Profile", profile_path, class: "btn color1btn" %>
+                                          <%= link_to "dashboard", dashboard_path, class: "btn color1btn" %>
                                         <% end %>
                                     </div>
                                 </div>

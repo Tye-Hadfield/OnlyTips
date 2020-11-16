@@ -1,17 +1,32 @@
-
-<%= form_for :users do |form| %>
-
-<div class="field">
-    <%= form.label :id, "Username" %>
-    <%= form.collection_select :id, @allusers, :id, :username %>
-  </div>
+<%= render "partials/nonadminnavbar" %>
 
 
-  <div class="field">
-    <%= form.label :roles %>
-    <%= form.collection_check_boxes :roles, @allusers, :roles, :roles_name %>
-  </div>
+<h1>Users</h1>
+
+<table>
+  <thead>
+    <tr>
+        <th>User Email</th>
+        <th>User Name</th>
+        <th>User Roles</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+
+  <tbody class="container text-center justify-contents-center">
+
+    
+    <% @users.each do |user| %>
+
+  <tr > 
+    <td class="col" style="width: 100px;"><%= user.email %></td>
+    <td class="col" style="width: 100px;"><%= user.username %></td>
+    <td class="col" style="width: 200px;"><%= user.roles.pluck(:name) %></td>
+    <td class="col" style="width: 100px;"><%= link_to 'Edit', edit_user_path(user) %></td>
+  </tr>
+
+  <% end %>
   
 
 
-<% end %>

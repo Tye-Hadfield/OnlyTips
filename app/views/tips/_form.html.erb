@@ -37,8 +37,10 @@
 
 
   <div class="field">
-    <%= form.label :result %>
-    <%= form.text_field :result %>
+  <%= form.radio_button(:result, "Win") %>
+  <%= form.label(:result, "Win") %>
+  <%= form.radio_button(:result, "Place") %>
+  <%= form.label(:result, "Place") %>
   </div>
 
   <div class="actions">

@@ -1,0 +1,12 @@
+<%= form_for @user, url: edit_user_path do |f| %>
+
+  <%= f.text_field :username %>
+
+  <div class="field">
+    <%= f.label :role_ids %>
+    <%= f.collection_check_boxes :role_ids, Role.all, :id, :name %>
+  </div>
+
+
+  <%= f.submit "Create" %>
+<% end %>
