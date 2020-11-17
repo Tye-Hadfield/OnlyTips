@@ -23,20 +23,29 @@ end
 User.destroy_all
 users = [
   {
+    username: "brokenblade",
     email: "user1@email.com",
     password: "password"
   },
   {
+    username: "MadLad",
     email: "user2@email.com",
     password: "password"
+
   },
   {
+    username: "Tippy",
     email: "user3@email.com",
     password: "password"
   },
 ]
 
 User.create!(users)
+
+
+
+puts "Users: #{User.count}"
+
 
 
 RaceCourse.destroy_all
@@ -77,6 +86,11 @@ Role.create!(roles)
 puts "Roles: #{Role.count}"
 
 
+@users = User.all
+
+@users.each do |user|
+  user.add_role :user
+end
 
 
 

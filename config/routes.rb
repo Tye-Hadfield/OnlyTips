@@ -40,8 +40,16 @@ get '/tippers/:id/show', to: "tippers#show", as: "show_tipper"
 
 get '/tips', to: "tips#index"
   
+
+
+  # Payment
+
+  post '/tippers/:tipper_id/subscribe', to: 'tippers#subscribe'
+  post '/tippers/:id/buy', to: 'tippers#buy', as: 'buy'
+  get '/tippers/:id/success', to: 'tippers#success', as: 'success'
+  get '/tippers/cancel', to: 'tippers#cancel', as: 'cancel'
   
-  
+
   root 'onlytips#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

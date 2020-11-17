@@ -2,6 +2,7 @@
 
 <h1> <%= @user.username %> Tips</h1>
 
+<% if current_user.subscriptions.include?(@user) %>
 <table>
   <thead>
     <tr>
@@ -23,6 +24,43 @@
     <% end %>
   </tbody>
 </table>
+<% else %>
+<h3>Subscribe to <%= @user.username %> to see their tips</h3>
+<td><button data-tipperId="<%= @user.id %>" id="checkout">Subscribe</button></td>
+<% end %>
+<script src="https://js.stripe.com/v3/"></script>
+
+<script>
+  var stripe = Stripe("pk_test_51HisrUCXYEQ6fBzq4tLaCz4yHCSYz853t5tQcCOLuMZ8zBmN7YamOgl4zf4zQyctHZly2LVcV0rn5u8U5q6YNj7I00znqbwuZG")
+  var createCheckoutSession = function(priceId, tipperId) {
+  return fetch(`/tippers/${tipperId}/subscribe`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      priceId: priceId,
+      tipperId: tipperId
+    })
+  }).then(function(result) {
+    return result.json();
+  })};
+
+  let tipperId = document.getElementById("checkout").dataset.tipperid
+
+  document
+  .getElementById("checkout")
+  .addEventListener("click", function(evt) {
+    createCheckoutSession("price_1Ho07kCXYEQ6fBzqY76bAsEf", tipperId).then(function(data) {
+      // Call Stripe.js method to redirect to the new Checkout page
+      stripe
+        .redirectToCheckout({
+          sessionId: data.sessionId
+        })
+    });
+  });
+</script>
+
 
 <br>
 

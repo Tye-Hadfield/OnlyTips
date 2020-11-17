@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_16_034735) do
+ActiveRecord::Schema.define(version: 2020_11_17_003444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,12 @@ ActiveRecord::Schema.define(version: 2020_11_16_034735) do
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
   end
 
+  create_table "subscription_users", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "subscription_id", null: false
+    t.index ["user_id", "subscription_id"], name: "index_subscription_users_on_user_id_and_subscription_id", unique: true
+  end
+
   create_table "tips", force: :cascade do |t|
     t.bigint "race_id", null: false
     t.bigint "user_id", null: false
@@ -119,6 +125,8 @@ ActiveRecord::Schema.define(version: 2020_11_16_034735) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "races", "race_courses"
+  add_foreign_key "subscription_users", "users"
+  add_foreign_key "subscription_users", "users", column: "subscription_id"
   add_foreign_key "tips", "horses"
   add_foreign_key "tips", "race_courses"
   add_foreign_key "tips", "races"
