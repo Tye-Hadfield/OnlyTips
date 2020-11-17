@@ -23,6 +23,36 @@ def subscribe
   end
 end
 
+def cancel
+
+  redirect_to tippers_path
+
+
+end
+
+
+def success
+
+  @subscribeuser = params[:id]
+  
+  current_user.subscriptions.push(User.find(params[:id]))
+
+  redirect_to show_tipper_path
+
+end
+
+def remove_sub
+
+  current_user.subscriptions.delete(params[:id])
+
+end
+
+
+def usersubs
+
+end
+
+
 
 private
 

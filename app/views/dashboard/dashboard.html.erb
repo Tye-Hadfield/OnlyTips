@@ -28,25 +28,19 @@
 <div class="container-fluid float-left justify-content-center">
     <div class="row justify-content-center">
             <div class="float-left margintoplil">
-                <button class="color1btn btnfont" onclick="window.location.href='http://localhost:3000/dashboard';">
-                  Home
-                 </button>
-                <button class="color1btn btnfont " onclick="window.location.href='http://localhost:3000/dashboard';">
-                  Profile
-                 </button>
-                <button class="color1btn btnfont " onclick="window.location.href='http://localhost:3000/tippers';">
-                  Tippers
-                 </button>
-                <button class="color1btn btnfont" onclick="window.location.href='http://localhost:3000/dashboard';">
-                  Your Tippers
-                 </button>
-                <button class="color1btn btnfont" onclick="window.location.href='http://localhost:3000/tips';">
-                  Add Tip
-                 </button>
+
+                <%= link_to "Home", dashboard_path, class: "color1btn btnfont " %>
+                
+                <%= link_to "Tippers", tippers_path, class: "color1btn btnfont " %>
+               
+                <%= link_to "Your Tippers", tippers_subscriptions_path, class: "color1btn btnfont " %>
+            
+                <%= link_to "Add Tip", tips_path, class: "color1btn btnfont " %>
+
                  <% if @user.has_role? :admin %>
-                 <button class="color1btn btnfont" onclick="window.location.href='http://localhost:3000/admin';">
-                    Admin Menu
-                </button>
+                 
+                 <%= link_to "Admin Menu", admin_path, class: "color1btn btnfont " %>
+               
                 <% end %>
             </div>
     </div>

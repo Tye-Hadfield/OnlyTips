@@ -1,0 +1,24 @@
+<h1>Your Subs</h1>
+
+
+<table>
+    <thead>
+      <tr>
+          <th>User Name</th>
+          <th>Number Of Tips</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody class="container text-center justify-contents-center">
+
+    
+        <% current_user.subscriptions.each do |user| %>
+    
+      <tr > 
+        <td class="col" style="width: 100px;"><%= user.username %></td>
+        <td class="col" style="width: 100px;"><%= user.tips.count %></td>
+        <td class="col" style="width: 100px;"><%= link_to 'Show Tips', show_tipper_path(user) %></td>
+      </tr>
+      
+      <% end %>

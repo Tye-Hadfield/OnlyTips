@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
 get '/tippers', to: "tippers#index"
 get '/tippers/:id/show', to: "tippers#show", as: "show_tipper"
+get '/tippers/subscriptions', to: "tippers#usersubs"
 
 
 
