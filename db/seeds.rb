@@ -86,6 +86,11 @@ Role.create!(roles)
 puts "Roles: #{Role.count}"
 
 
+
+@adminuser = User.first
+
+@adminuser.add_role :admin
+
 @users = User.all
 
 @users.each do |user|
