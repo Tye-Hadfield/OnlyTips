@@ -36,7 +36,7 @@ get '/tippers/subscriptions', to: "tippers#usersubs"
 
 
   # Devise Where to send after user login/created
-  get '/user' => "dashboard#dashboard", :as => :user_root
+  # get '/user' => "dashboard#dashboard", :as => :user_root
 
 
 get '/tips', to: "tips#index"
