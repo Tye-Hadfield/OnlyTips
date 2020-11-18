@@ -10,19 +10,27 @@
             <div class="col color1 algin-text-center justify-content-center align-items-center align-self-center align-content-center ">
             </div>
             <div class="col">
-                
-                <%= link_to "Home", dashboard_path, class: "color1btn btnfont " %>
 
-                   <div class="col">
+                   <%= link_to "Home", dashboard_path, class: "color1btn btnfont" %>
+
+
+                   <div class="row">
                       <h3>
                             <%= current_user.username %>
                       </h3> 
                    </div>
 
-
             </div>
+
+
             <div class="col align-self-center  ">
                 <%= link_to "Sign-Out", destroy_user_session_path, method: :delete, class: "btn color1btn float-right" %>
             </div>
             
-    </div>
+        </div>
+                <div class="container">
+    
+                    <h1>You do not have the correct roles</h1>
+    
+    
+                </div>

@@ -1,5 +1,5 @@
 class HorsesController < ApplicationController
-  load_and_authorize_resource
+  before_action :check_role
   before_action :set_horse, only: [:show, :edit, :update, :destroy, :horses_view ]
   before_action :set_horses, only: [:set_horses]
 
@@ -70,6 +70,20 @@ class HorsesController < ApplicationController
   end
 
   private
+
+
+  def check_role
+
+    if current_user.has_role? :admin
+
+    else
+
+      render 'partials/_wrongrole'
+      
+    end
+
+  end
+
 
   def set_horses
     @horses = Horse.all

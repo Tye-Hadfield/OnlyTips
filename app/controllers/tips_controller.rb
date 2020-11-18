@@ -1,5 +1,5 @@
 class TipsController < ApplicationController
-  load_and_authorize_resource
+  before_action :check_tipper
   before_action :set_tip, only: [:show, :edit, :update, :destroy]
   before_action :set_user
 
@@ -64,6 +64,20 @@ class TipsController < ApplicationController
   end
 
   private
+
+  def check_tipper
+
+    if current_user.has_role? :tipper
+
+    else
+
+      render 'partials/_nottipper'
+      
+    end
+
+
+  end
+
 
   def set_user
     @user = current_user

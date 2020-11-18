@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-    # load_and_authorize_resource
+    before_action :check_role
     before_action :set_users
     before_action :set_roles
     before_action :set_user, only: [ :edit, :update ]
@@ -36,6 +36,19 @@ class AdminController < ApplicationController
 
 
     private
+
+      def check_role
+
+        if current_user.has_role? :admin
+
+        else
+
+          render 'partials/_wrongrole'
+          
+        end
+
+      end
+
 
     def set_users
         @users = User.all

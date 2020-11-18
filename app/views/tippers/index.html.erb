@@ -16,12 +16,13 @@
   <tbody class="container text-center justify-contents-center">
 
     
-    <% @users.each do |user| %>
+
+    <% @tippers.each do |tip_users| %>
 
   <tr > 
-    <td class="col" style="width: 100px;"><%= user.username %></td>
-    <td class="col" style="width: 100px;"><%= user.tips.count %></td>
-    <td class="col" style="width: 100px;"><%= link_to 'Show Tips', show_tipper_path(user) %></td>
+    <td class="col" style="width: 100px;"><%= tip_users.username %></td>
+    <td class="col" style="width: 100px;"><%= tip_users.tips.count %></td>
+    <td class="col" style="width: 100px;"><%= link_to 'Show Tips', show_tipper_path(tip_users) %></td>
   </tr>
   
   <% end %>

@@ -24,10 +24,7 @@ get '/tippers', to: "tippers#index"
 get '/tippers/:id/show', to: "tippers#show", as: "show_tipper"
 get '/tippers/subscriptions', to: "tippers#usersubs"
 
-
-
-
-  # dashboard
+# dashboard
 
   get 'onlytips/index', to: "onlytips#index"
   get '/dashboard', to: "dashboard#dashboard"
@@ -35,11 +32,11 @@ get '/tippers/subscriptions', to: "tippers#usersubs"
 
 
 
-  # Devise Where to send after user login/created
+# Devise Where to send after user login/created
   get '/user' => "dashboard#dashboard", :as => :user_root
-
-
-get '/tips', to: "tips#index"
+  
+  
+  get '/tips', to: "tips#index"
   
 
 

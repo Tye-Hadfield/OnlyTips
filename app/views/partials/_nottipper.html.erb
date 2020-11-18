@@ -1,0 +1,53 @@
+
+    <div class="container-fluid">
+        <p id="notice"><%= notice %></p>
+
+        <div class="row backgroundcolornav justify-content-center">
+           
+            <div class="col algin-text-center justify-content-center align-items-center align-self-center align-content-center">
+                    <%= image_tag("logo.png", :alt => "A picture of a logo", class: "img-fluid justify-content-center ", width: "100", height: "50") %>
+            </div>
+            <div class="col color1 algin-text-center justify-content-center align-items-center align-self-center align-content-center ">
+            </div>
+            <div class="col">
+
+                   <%= link_to "Home", dashboard_path, class: "color1btn btnfont" %>
+
+
+                   <div class="row">
+                      <h3>
+                            <%= current_user.username %>
+                      </h3> 
+                   </div>
+
+            </div>
+
+
+            <div class="col align-self-center  ">
+                <%= link_to "Sign-Out", destroy_user_session_path, method: :delete, class: "btn color1btn float-right" %>
+            </div>
+            
+        </div>
+                <div class="container">
+    
+                    <h1>You do not have the correct roles</h1>
+
+                    <h2>Send e-mail to roles@admin.com</h2>
+
+                    <h4>Please provide your track record and why we should allow you to sell your tips</h4>
+
+                    <form action="mailto:roles@admin.com" method="post" enctype="text/plain">
+                    Username:<br>
+                    <input type="text" name="username"><br>
+                    Name:<br>
+                    <input type="text" name="name"><br>
+                    E-mail:<br>
+                    <input type="text" name="mail"><br>
+                    Comment:<br>
+                    <input type="text" name="comment" size="50"><br><br>
+                    <input type="submit" value="Send">
+                    <input type="reset" value="Reset">
+                    </form>
+    
+    
+                </div>

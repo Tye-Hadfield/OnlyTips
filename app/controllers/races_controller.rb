@@ -1,5 +1,5 @@
 class RacesController < ApplicationController
-  load_and_authorize_resource
+  before_action :check_role
   before_action :set_race, only: [:show, :edit, :update, :destroy]
   before_action :set_horses
   before_action :set_race_courses
@@ -67,6 +67,20 @@ class RacesController < ApplicationController
   end
 
   private
+
+  def check_role
+
+    if current_user.has_role? :admin
+
+    else
+
+      render 'partials/_wrongrole'
+      
+    end
+
+  end
+
+
 
   def set_horses
     @horses = Horse.all
